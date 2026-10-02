@@ -1,12 +1,17 @@
 package br.com.neto.Screenmatch.modelos;
 
-public class Titulo {
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
+
+    public Titulo(String nome, int anoDeLancamento) {
+        this.nome = nome;
+        this.anoDeLancamento = anoDeLancamento;
+    }
 
     public void exibirFichaTecnica (){
         System.out.println("Nome do Filme: " + nome);
@@ -19,7 +24,7 @@ public class Titulo {
         return totalDeAvaliacoes;
     }
 
-    public void setNome(String nome) {
+    public void setNome(String nome, int anoDeLancamento) {
         this.nome = nome;
     }
 
@@ -46,5 +51,26 @@ public class Titulo {
 
     public double mediaAvaliacoes(){
         return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
+    }
+
+    public boolean getIncluidoNoPlano() {
+        return incluidoNoPlano;
+    }
+
+    public double getSomaDasAvaliacoes() {
+        return somaDasAvaliacoes;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    @Override
+    public int compareTo(Titulo o) {
+        return this.getNome().compareTo(o.getNome());
     }
 }

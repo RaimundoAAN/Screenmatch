@@ -4,7 +4,7 @@ import br.com.neto.Screenmatch.calculor.Classificavel;
 public class Episodio implements Classificavel {
     private int episodio;
     private String nome;
-    private String serie;
+    private Serie serie;
     private int totalVisualizacoes;
 
     public int getTotalVisualizacoes() {
@@ -31,11 +31,11 @@ public class Episodio implements Classificavel {
         this.nome = nome;
     }
 
-    public String getSerie() {
+    public Serie getSerie() {
         return serie;
     }
 
-    public void setSerie(String serie) {
+    public void setSerie(Serie serie) {
         this.serie = serie;
     }
 
